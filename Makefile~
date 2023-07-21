@@ -1,0 +1,14 @@
+mares : prin.o fun.o funfun.o
+	gcc -lncurses prin.o fun.o funfun.o -o mares
+
+prin.o : prin.c cabe.h cabe2.h
+	gcc -c -lncurses prin.c -o prin.o
+
+fun.o : fun.c cabe.h
+	gcc -c -lncurses fun.c -o fun.o
+
+funfun.o : funfun.c cabe.h cabe2.h
+	gcc -c -lncurses funfun.c -o funfun.o 
+
+clean : 
+	rm *.o mares
